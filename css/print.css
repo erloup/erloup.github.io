@@ -1,0 +1,61 @@
+body {
+    background-color: white;
+    font-family :Serif;
+    font-size :12pt;
+    color: black;
+}
+
+.nav {
+    display: none;
+}
+
+h1, .footer {
+    text-align: center;
+    font-weight: 900;
+}
+
+.main article {
+    margin-bottom: 30px;
+}
+
+.card {
+    padding: 5px 20px 5px 20px;
+    display: flex;
+    flex-direction: column;
+    border: solid 1px black;
+}
+
+.card .card-title {
+    text-align: center;
+    padding: 1em;
+    border-radius: 15px;
+    border: .01em solid black;
+}
+
+.card figure {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.card figure > img {
+    border-radius: 8px;
+    width: auto;
+    max-height: 200px;
+    max-width: 400px;
+}
+
+.card figure > figcaption {
+    flex-basis: 100%;
+    text-align: center;
+}
+
+.card-section {
+    border-top: .01em solid black;
+}
+
+.card-section > p {
+    padding-left: 25px;
+}
