@@ -20,7 +20,7 @@
     /* Tailles de texte (mobiles) */
     --text-small: 1em;
     --text-medium: 1.3em;
-    --text-xl: 2em;
+    --text-xl: 1.5em;
 }
 
 body {
@@ -189,7 +189,7 @@ body {
 
 .card figure>img:hover {
     transition-delay: 1s;
-    transform: scale(2);
+    transform: scale(1.75);
     cursor: pointer;
 }
 
