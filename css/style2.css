@@ -18,8 +18,8 @@
     --gap: 1em;
 
     /* Tailles de texte (mobiles) */
-    --text-small: 1em;
-    --text-medium: 1.3em;
+    --text-small: 0.9em;
+    --text-medium: 1.2em;
     --text-xl: 1.5em;
 }
 
@@ -224,8 +224,8 @@ body {
         --padding-large: 3em;
         --gap: 1.5em;
 
-        --text-small: 1.1em;
-        --text-medium: 1.5em;
+        --text-small: 1em;
+        --text-medium: 1.2em;
         --text-xl: 2em;
     }
 
@@ -258,10 +258,5 @@ body {
 
     .main article {
         margin-bottom: var(--padding-large);
-    }
-
-    .card figure>img {
-        max-width: 600px;
-        max-height: 300px;
     }
 }
