@@ -1,0 +1,267 @@
+:root {
+    /* Couleurs */
+    --color-bg: #1b1b1b;
+    --color-header-bg: #141316;
+    --color-footer-bg: #141316;
+    --color-main-bg: #061925;
+    --color-text: #fcfcfc;
+    --color-accent: #2f89fc;
+    --color-border: white;
+
+    /* Police */
+    --font-main: "Roboto", Arial, sans-serif;
+
+    /* Espacements (mobiles par défaut) */
+    --padding-small: 0.5em;
+    --padding-medium: 1em;
+    --padding-large: 1.5em;
+    --gap: 1em;
+
+    /* Tailles de texte (mobiles) */
+    --text-small: 1em;
+    --text-medium: 1.3em;
+    --text-xl: 2em;
+}
+
+body {
+    display: grid;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+
+    margin: 0;
+    min-height: 100vh;
+
+    font-family: var(--font-main);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    gap: var(--gap);
+    font-size: var(--text-small);
+}
+
+/* ========== HEADER ========== */
+.header {
+    grid-area: header;
+    position: relative;
+    width: 100%;
+    height: 12rem;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5em;
+    width: 100%;
+    height: 20em;
+    z-index: -1;
+    transform: skewY(-3.5deg);
+    background: linear-gradient(var(--color-header-bg), var(--color-main-bg));
+    border-bottom: 0.2em solid var(--color-border);
+}
+
+.header h1 {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    text-shadow: 0.022em 0.022em 0.022em #111;
+    color: white;
+    padding: var(--padding-small) var(--padding-medium);
+}
+
+/* ========== NAVIGATION ========== */
+.nav {
+    grid-area: nav;
+}
+
+.nav ul {
+    background-color: var(--color-main-bg);
+    border: 0.2em solid var(--color-border);
+    border-radius: 1em;
+    margin: var(--padding-small);
+    padding: 0;
+    list-style: none;
+}
+
+.nav li {
+    display: flex;
+    margin: var(--padding-small) 0;
+}
+
+.nav li a {
+    padding: var(--padding-small);
+    width: 100%;
+    color: white;
+    font-size: var(--text-medium);
+    text-align: center;
+    text-decoration: none;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    transition: all 0.3s ease-in-out;
+}
+
+.nav li:hover {
+    background-color: rgba(42, 56, 65, 0.82);
+    cursor: pointer;
+}
+
+.nav li:hover a {
+    color: var(--color-accent);
+}
+
+/* ========== MAIN ========== */
+.main {
+    grid-area: main;
+    padding: var(--padding-medium);
+}
+
+.main article {
+    margin-bottom: var(--padding-medium);
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    grid-area: footer;
+    position: relative;
+    height: 8em;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 4em;
+    width: 100%;
+    height: 10em;
+    z-index: -1;
+    transform: skewY(-3.5deg);
+    background: linear-gradient(var(--color-main-bg), var(--color-footer-bg));
+    border-top: 0.2em solid var(--color-border);
+}
+
+.footer p {
+    font-size: var(--text-small);
+    color: white;
+}
+
+/* ========== CARD ========== */
+.card {
+    background-color: var(--color-main-bg);
+    border-radius: 5px;
+    box-shadow: 0 5px 5px -3px var(--color-border);
+    padding: var(--padding-small) var(--padding-medium);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+}
+
+.card .card-title {
+    text-align: center;
+    background-color: var(--color-main-bg);
+    padding: var(--padding-small);
+    border-radius: 15px;
+    border: 1px solid var(--color-border);
+    font-size: var(--text-medium);
+}
+
+.card figure {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    align-items: center;
+    justify-content: center;
+}
+
+.card figure>img {
+    border-radius: 8px;
+    width: auto;
+    max-height: 250px;
+    max-width: 100%;
+    transition: transform 0.6s ease-in-out;
+}
+
+.card figure>img:hover {
+    transition-delay: 1s;
+    transform: scale(2);
+    cursor: pointer;
+}
+
+.card figure>figcaption {
+    flex-basis: 100%;
+    text-align: center;
+    font-size: var(--text-small);
+}
+
+.card-section {
+    border-top: 1px solid var(--color-border);
+}
+
+.card-section>p {
+    padding-left: var(--padding-small);
+    font-size: var(--text-small);
+}
+
+.card figure>figcaption a {
+    color: #377dda;
+}
+
+.card figure>figcaption a:hover {
+    color: var(--color-accent);
+}
+
+/* ========== RESPONSIVE : TABLETTE & DESKTOP ========== */
+@media (min-width: 1000px) {
+    :root {
+        --padding-small: 1em;
+        --padding-medium: 2em;
+        --padding-large: 3em;
+        --gap: 1.5em;
+
+        --text-small: 1.1em;
+        --text-medium: 1.5em;
+        --text-xl: 2em;
+    }
+
+    body {
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "footer footer";
+        grid-template-rows: 15em 1fr 10em;
+        grid-template-columns: 20% 1fr;
+    }
+
+    .header {
+        height: 16em;
+    }
+
+    .header::before {
+        bottom: 6em;
+        height: 25em;
+    }
+
+    .footer {
+        height: 10em;
+    }
+
+    .footer::before {
+        top: 5em;
+        height: 15em;
+    }
+
+    .main article {
+        margin-bottom: var(--padding-large);
+    }
+
+    .card figure>img {
+        max-width: 600px;
+        max-height: 300px;
+    }
+}
